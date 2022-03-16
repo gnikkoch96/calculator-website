@@ -11,3 +11,7 @@
 
 Brainstorm:
 1. Make row 5 flex, and have 0 have a higher flex value so that it scales
+
+
+Notes
+1. I am not seeing that to have a good commit message, you have to be specific as possible as what you pushed so that it is easier to see what someone has done. "organized layout" is not as helpful as "used flex to organize buttons in rows'
