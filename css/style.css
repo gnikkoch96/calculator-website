@@ -23,6 +23,7 @@ button{
     background-color: blue;
     border-radius: 15px;
     border: 1px solid black;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,6 +34,12 @@ button{
     background-color: red;
     width: 250px;
     height: 50px;
+    font-size: 32px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 .calculator-buttons-row1,
