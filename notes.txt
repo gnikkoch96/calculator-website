@@ -1,0 +1,13 @@
+1. Create functions for all basic math operators
+    a. add
+    b. subtract
+    3. multiply
+    4. divide
+
+2. Create a function operate(arg1, arg2) that will decide which functions to call (from step 1)
+
+3. Create an html skeleton with buttons for each digit, all the basic math operators, and an event listener when someone presses the "=" key. Also include a way to display the result and add a 'clear' button.
+
+
+Brainstorm:
+1. Make row 5 flex, and have 0 have a higher flex value so that it scales

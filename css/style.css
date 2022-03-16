@@ -1,0 +1,14 @@
+body{
+    min-height: 100vh;
+}
+
+.calculator-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator-buttons{
+    display: flex;
+    
+}
