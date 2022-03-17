@@ -6,19 +6,47 @@ calcDisplay.textContent = '0';
 let buttons = document.querySelectorAll('.calculator-buttons button');
 addButtonEventListeners(buttons);
 
+// flags
+let pressedDot = false;
+let pressedOperator = false;
+
 // 0 by default
 let num1 = 0, num2 = 0;
 
 function addButtonEventListeners(buttons){
     buttons.forEach(button => {     
+        // number pad listener
         if(button.className == 'number-btn'){
             button.addEventListener('click', () => {
-                if(calcDisplay.textContent.length < MAX_NUM_DISPLAY){
-                    if(calcDisplay.textContent === '0') calcDisplay.textContent = button.textContent;
-                    else calcDisplay.textContent += button.textContent;
-                }
+                if(calcDisplay.textContent === '0') 
+                    calcDisplay.textContent = button.textContent;
+                else 
+                    calcDisplay.textContent += button.textContent;
             }); 
         }       
+
+        // operator listeners
+        if(button.className === 'operator'){
+            button.addEventListener('click', () => {
+                // store num1
+                num1 = Number(calcDisplay.textContent);
+                
+                // toggle flag
+                pressedOperator = true;
+            });
+        }
+
+        // clear
+        if(button.id === 'clear'){
+            button.addEventListener('click', () => {
+                //reset all flags
+                pressedDot = false;
+                pressedOperator = false;
+
+                // reset display
+                calcDisplay.textContent = '0';
+            });
+        }
     });
 }
 
