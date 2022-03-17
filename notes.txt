@@ -34,7 +34,7 @@ tasks
 1. fix overflowing number   
     a. I want to make it so that it expands the display box
 7. (bug) pressing = shouldn't work unless an expression was made
-8. After pressing =, instead of replacing the number on the next input it appends to it 
+8. (bug) After pressing =, instead of replacing the number on the next input it appends to it 
 
 
 

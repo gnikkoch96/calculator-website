@@ -53,6 +53,20 @@ button{
     font-size: 16px;
 }
 
+.del-container{
+    width: 250px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#delete{
+    width: 50px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 15px;
+    background-color: red;
+}
+
 .calculator-buttons-row1,
 .calculator-buttons-row2,
 .calculator-buttons-row3,
