@@ -36,3 +36,6 @@ tasks
 2. add a delete function when pressing backspace
 5. (bug) subtracting a negative doesn't add
 6. (bug) adding a negative adds
+7. (bug) pressing = shouldn't work unless an expression was made
+
+

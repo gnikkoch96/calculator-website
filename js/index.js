@@ -22,55 +22,19 @@ function addButtonEventListeners(buttons){
     buttons.forEach(button => {     
         // number pad listener
         if(button.className == 'number-btn'){
-            button.addEventListener('click', () => {
-                if(calcDisplay.textContent === '0' || pressedOperator) {
-                    if(num1 != 0){
-                        pressedNum2 = true;
-                    }
-
-                    calcDisplay.textContent = button.textContent;
-                    pressedOperator = false;
-                }else 
-                    calcDisplay.textContent += button.textContent;
-            }); 
+            button.addEventListener('click', enterNumber); 
         }       
 
         // dot
         if(button.id === 'dot'){
-            button.addEventListener('click', () => {
-                if(!pressedDot){
-                    calcDisplay.textContent += button.textContent;        
-
-                    pressedDot = true;
-                }
-            });
+            button.addEventListener('click', enterDot);
         }
 
         // operator listeners
         if(button.className === 'operator'){
-            button.addEventListener('click', () => {
-                if(!pressedOperator){
-                    if(pressedNum2){
-                        // toggle flag
-                        pressedNum2 = false;
-    
-                        // calculate result
-                        equals();
-                    }
-
-                    // store num1
-                    num1 = Number(calcDisplay.textContent);
-    
-                    // toggle flag
-                    pressedOperator = true;
-                }
-
-                operator = button.textContent;
-
-                // update overall display
-                calcDisplayOverall.textContent = `${num1} ${operator}`;
-            });
+            button.addEventListener('click', enterOperator);
         }
+        
         if(button.id === 'toggle'){
             button.addEventListener('click', negate);
         }
@@ -96,6 +60,52 @@ function addKeyBoardPressListeners(){
                 equals();
         }
     });
+}
+
+function enterOperator(event){
+    let button = event.target;
+        if(!pressedOperator){
+            if(pressedNum2){
+                // toggle flag
+                pressedNum2 = false;
+
+                // calculate result
+                equals();
+            }
+
+            // store num1
+            num1 = Number(calcDisplay.textContent);
+
+            // toggle flag
+            pressedOperator = true;
+        }
+
+        operator = button.textContent;
+
+        // update overall display
+        calcDisplayOverall.textContent = `${num1} ${operator}`;
+}
+
+function enterDot(){
+    if(!pressedDot){
+        calcDisplay.textContent += button.textContent;        
+
+        pressedDot = true;
+    }
+}
+
+function enterNumber(event){
+    let button = event.target;
+
+    if(calcDisplay.textContent === '0' || pressedOperator) {
+        if(num1 != 0){
+            pressedNum2 = true;
+        }
+
+        calcDisplay.textContent = button.textContent;
+        pressedOperator = false;
+    }else 
+        calcDisplay.textContent += button.textContent;
 }
 
 function clear(){
