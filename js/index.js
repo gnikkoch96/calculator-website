@@ -25,7 +25,7 @@ function addButtonEventListeners(buttons){
             button.addEventListener('click', enterNumber); 
         }       
 
-        // dot
+        // entering dot
         if(button.id === 'dot'){
             button.addEventListener('click', enterDot);
         }
@@ -34,11 +34,12 @@ function addButtonEventListeners(buttons){
         if(button.className === 'operator'){
             button.addEventListener('click', enterOperator);
         }
-        
+
         if(button.id === 'toggle'){
             button.addEventListener('click', negate);
         }
 
+        // converting number to percent
         if(button.id === 'percent'){
             button.addEventListener('click', convertPercent);
         }
@@ -147,6 +148,7 @@ function equals(){
 
 // op will represent the symbol of the operation
 function operate(op, num1, num2){
+    console.log(`Operate(${op}, ${num1}, ${num2})`);
     switch(op){
         case '+':
             return add(num1, num2);
@@ -180,8 +182,7 @@ function divide(num1, num2){
 }
 
 function negate(){
-    num1 = Number(calcDisplay.textContent) * -1;
-    calcDisplay.textContent = num1;
+    calcDisplay.textContent = Number(calcDisplay.textContent) * -1;
 }
 
 function convertPercent(){
