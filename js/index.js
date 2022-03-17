@@ -5,9 +5,11 @@ calcDisplay.textContent = '0';
 
 let calcDisplayOverall = document.querySelector('.calculator-overall-display');
 
-let buttons = document.querySelectorAll('.calculator-buttons button');
+let buttons = document.querySelectorAll('button');
 addButtonEventListeners(buttons);
 addKeyBoardPressListeners();
+
+console.log(buttons)
 
 // flags
 let pressedDot = false;
@@ -50,6 +52,10 @@ function addButtonEventListeners(buttons){
 
         if(button.id === 'clear'){
             button.addEventListener('click', clear);
+        }
+
+        if(button.id === 'delete'){
+            button.addEventListener('click', deleteNum);
         }
     });
 }
@@ -197,7 +203,7 @@ function convertPercent(){
 
 function deleteNum() {
     if(calcDisplay.textContent == '0') return;
-    
+
     let newNum = calcDisplay.textContent.substring(0, calcDisplay.textContent.length - 1);
     calcDisplay.textContent = newNum;
 }
