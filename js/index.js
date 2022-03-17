@@ -60,6 +60,11 @@ function addKeyBoardPressListeners(){
             if(pressedNum2)
                 equals();
         }
+
+        if(event.key === 'Backspace'){
+            deleteNum();
+        }
+
     });
 }
 
@@ -190,3 +195,9 @@ function convertPercent(){
     calcDisplay.textContent = num1;
 }
 
+function deleteNum() {
+    if(calcDisplay.textContent == '0') return;
+    
+    let newNum = calcDisplay.textContent.substring(0, calcDisplay.textContent.length - 1);
+    calcDisplay.textContent = newNum;
+}
