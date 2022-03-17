@@ -75,6 +75,10 @@ function addButtonEventListeners(buttons){
             button.addEventListener('click', negate);
         }
 
+        if(button.id === 'percent'){
+            button.addEventListener('click', convertPercent);
+        }
+
         if(button.id === 'equals'){
             button.addEventListener('click', equals);
         }
@@ -167,6 +171,11 @@ function divide(num1, num2){
 
 function negate(){
     num1 = Number(calcDisplay.textContent) * -1;
+    calcDisplay.textContent = num1;
+}
+
+function convertPercent(){
+    num1 = Number(calcDisplay.textContent) /100;    
     calcDisplay.textContent = num1;
 }
 
