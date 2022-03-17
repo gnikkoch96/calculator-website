@@ -5,14 +5,14 @@ calcDisplay.textContent = '0';
 
 let calcDisplayOverall = document.querySelector('.calculator-overall-display');
 
-console.log(calcDisplayOverall)
-
 let buttons = document.querySelectorAll('.calculator-buttons button');
 addButtonEventListeners(buttons);
+addKeyBoardPressListeners();
 
 // flags
 let pressedDot = false;
 let pressedOperator = false;
+let pressedNum2 = false;
 
 // 0 by default
 let num1 = 0, num2 = 0;
@@ -24,6 +24,10 @@ function addButtonEventListeners(buttons){
         if(button.className == 'number-btn'){
             button.addEventListener('click', () => {
                 if(calcDisplay.textContent === '0' || pressedOperator) {
+                    if(num1 != 0){
+                        pressedNum2 = true;
+                    }
+
                     calcDisplay.textContent = button.textContent;
                     pressedOperator = false;
                 }else 
@@ -46,6 +50,14 @@ function addButtonEventListeners(buttons){
         if(button.className === 'operator'){
             button.addEventListener('click', () => {
                 if(!pressedOperator){
+                    if(pressedNum2){
+                        // toggle flag
+                        pressedNum2 = false;
+    
+                        // calculate result
+                        equals();
+                    }
+
                     // store num1
                     num1 = Number(calcDisplay.textContent);
     
@@ -70,6 +82,15 @@ function addButtonEventListeners(buttons){
     });
 }
 
+function addKeyBoardPressListeners(){
+    window.addEventListener('keyup', event => {
+        if(event.key === '='){
+            if(pressedNum2)
+                equals();
+        }
+    });
+}
+
 function clear(){
     //reset all flags
     pressedDot = false;
@@ -82,6 +103,7 @@ function clear(){
 
     // reset display
     calcDisplay.textContent = '0';
+    calcDisplayOverall.textContent = '';
 }
 
 function equals(){
@@ -103,6 +125,7 @@ function equals(){
     // reset flags
     pressedDot = false;
     pressedOperator = false;
+    pressedNum2 = false;
 }
 
 // op will represent the symbol of the operation

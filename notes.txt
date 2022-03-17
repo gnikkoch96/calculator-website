@@ -19,21 +19,12 @@ Notes
 
 
 
+1. User presses a number1
+2. User presses an operator
+    a. pressedOperator = true
+3. User presses a number2
+    b. pressedOperator = false
+4. User presses an operator
+    b. pressedOperator = true;
 
-function equals(){
-    // store num2
-    num2 = Number(calcDisplay.textContent);
-
-    // calculate and append to display 
-    let result = operate(operator, num1, num2);
-    console.log(result);
-
-    calcDisplay.textContent = result;
-
-    // store to num1;
-    num1 = result;
-
-    // reset flags
-    pressedDot = false;
-    pressedOperator = false;
-}
+How do we know if the user has pressed their second number? 
