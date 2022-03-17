@@ -1,5 +1,26 @@
+const MAX_NUM_DISPLAY = 12;
+
 let calcDisplay = document.querySelector('.calculator-display')
 calcDisplay.textContent = '0';
+
+let buttons = document.querySelectorAll('.calculator-buttons button');
+addButtonEventListeners(buttons);
+
+// 0 by default
+let num1 = 0, num2 = 0;
+
+function addButtonEventListeners(buttons){
+    buttons.forEach(button => {     
+        if(button.className == 'number-btn'){
+            button.addEventListener('click', () => {
+                if(calcDisplay.textContent.length < MAX_NUM_DISPLAY){
+                    if(calcDisplay.textContent === '0') calcDisplay.textContent = button.textContent;
+                    else calcDisplay.textContent += button.textContent;
+                }
+            }); 
+        }       
+    });
+}
 
 // op will represent the symbol of the operation
 function operate(op, num1, num2){
