@@ -15,3 +15,25 @@ Brainstorm:
 
 Notes
 1. I am not seeing that to have a good commit message, you have to be specific as possible as what you pushed so that it is easier to see what someone has done. "organized layout" is not as helpful as "used flex to organize buttons in rows'
+
+
+
+
+
+function equals(){
+    // store num2
+    num2 = Number(calcDisplay.textContent);
+
+    // calculate and append to display 
+    let result = operate(operator, num1, num2);
+    console.log(result);
+
+    calcDisplay.textContent = result;
+
+    // store to num1;
+    num1 = result;
+
+    // reset flags
+    pressedDot = false;
+    pressedOperator = false;
+}
