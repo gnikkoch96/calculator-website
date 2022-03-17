@@ -71,6 +71,9 @@ function addButtonEventListeners(buttons){
                 calcDisplayOverall.textContent = `${num1} ${operator}`;
             });
         }
+        if(button.id === 'toggle'){
+            button.addEventListener('click', negate);
+        }
 
         if(button.id === 'equals'){
             button.addEventListener('click', equals);
@@ -158,7 +161,12 @@ function multiply(num1, num2){
 }
 
 function divide(num1, num2){
-    if(num2 == 0) return 'IDIOT';
+    if(num2 == 0) return 'BOOM';
     return num1/num2;
+}
+
+function negate(){
+    num1 = Number(calcDisplay.textContent) * -1;
+    calcDisplay.textContent = num1;
 }
 

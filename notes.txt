@@ -15,7 +15,7 @@ Brainstorm:
 
 Notes
 1. I am not seeing that to have a good commit message, you have to be specific as possible as what you pushed so that it is easier to see what someone has done. "organized layout" is not as helpful as "used flex to organize buttons in rows'
-
+2. Next time I should clarify specific tasks that I need to do so I can start commiting in increments and providing better comments on said commits
 
 
 
@@ -28,3 +28,11 @@ Notes
     b. pressedOperator = true;
 
 How do we know if the user has pressed their second number? 
+
+
+tasks
+1. fix overflowing number   
+    a. I want to make it so that it expands the display box
+2. add a delete function when pressing backspace
+3. add negate function
+4. add a % function

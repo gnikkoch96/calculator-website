@@ -12,6 +12,7 @@ body {
 button{
     box-sizing: border-box;
     border: 1px solid black;
+    border-radius: 50%;
     width: 65px;
     height: 50px;
 }
@@ -32,15 +33,18 @@ button{
 
 .calculator-overall-display,
 .calculator-display{
+    border: 1px solid black;
+    border-radius: 4px;
     background-color: white;
     width: 250px;
     height: 50px;
     font-size: 32px;
+    padding: 0 8px;
 
-    border: 1px solid black;
-    border-radius: 4px;
+    
     display: flex;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -55,6 +59,7 @@ button{
 .calculator-buttons-row4,
 .calculator-buttons-row5{
     display: flex;
+    gap: 4px;
 }
 
 #zero{
