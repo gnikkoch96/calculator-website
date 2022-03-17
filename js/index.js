@@ -9,8 +9,6 @@ let buttons = document.querySelectorAll('button');
 addButtonEventListeners(buttons);
 addKeyBoardPressListeners();
 
-console.log(buttons)
-
 // flags
 let pressedDot = false;
 let pressedOperator = false;
@@ -135,7 +133,9 @@ function clear(){
     calcDisplayOverall.textContent = '';
 }
 
-function equals(){
+function equals(){    
+    if(operator === '') return;
+
     // store num2
     num2 = Number(calcDisplay.textContent);
 
@@ -150,6 +150,8 @@ function equals(){
 
     // store to num1;
     num1 = result;
+
+    operator = '';
 
     // reset flags
     pressedDot = false;
