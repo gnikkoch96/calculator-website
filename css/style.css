@@ -24,6 +24,7 @@ body {
 }
 
 button{
+    color: white;
     box-sizing: border-box;
     background-color: #52b69a;
     border: 1px solid black;
@@ -77,7 +78,7 @@ button{
     height: 16px;
     font-size: 12px;
     border-radius: 15px;
-    background-color: #b5e48c;
+    background-color: #ca6702;
 }
 
 .calculator-buttons{
