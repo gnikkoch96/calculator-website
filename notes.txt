@@ -31,9 +31,7 @@ How do we know if the user has pressed their second number?
 
 
 tasks
-1. fix overflowing number   
-    a. I want to make it so that it expands the display box
-
+3. Design the calculator with a theme
 
 
 

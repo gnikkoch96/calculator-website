@@ -11,19 +11,20 @@ body {
 
 button{
     box-sizing: border-box;
+    background-color: #52b69a;
     border: 1px solid black;
-    border-radius: 50%;
+    border-radius: 5%;
     width: 65px;
     height: 50px;
 }
 
 .calculator-body{
-    margin-top: 32px;
     width: 300px;
     height: 400px;
-    background-color: blue;
+    background-color: #184e77;
     border-radius: 15px;
     border: 1px solid black;
+    padding: 16px;
 
     display: flex;
     flex-direction: column;
@@ -35,7 +36,7 @@ button{
 .calculator-display{
     border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
+    background-color: #b5e48c;
     width: 250px;
     height: 50px;
     font-size: 32px;
@@ -62,7 +63,13 @@ button{
     height: 16px;
     font-size: 12px;
     border-radius: 15px;
-    background-color: red;
+    background-color: #b5e48c;
+}
+
+.calculator-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .calculator-buttons-row1,
