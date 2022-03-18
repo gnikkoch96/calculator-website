@@ -11,6 +11,7 @@ addKeyBoardPressListeners();
 
 // flags
 let pressedDot = false;
+let pressedEqual = false;
 let pressedOperator = false;
 let pressedNum2 = false;
 
@@ -107,13 +108,17 @@ function enterDot(){
 function enterNumber(event){
     let button = event.target;
 
-    if(calcDisplay.textContent === '0' || pressedOperator) {
+    if(calcDisplay.textContent === '0' || pressedOperator 
+        || pressedEqual) {
         if(num1 != 0){
             pressedNum2 = true;
         }
 
         calcDisplay.textContent = button.textContent;
+
+        // reset flags
         pressedOperator = false;
+        pressedEqual = false;
     }else 
         calcDisplay.textContent += button.textContent;
 }
@@ -122,6 +127,7 @@ function clear(){
     //reset all flags
     pressedDot = false;
     pressedOperator = false;
+    pressedEqual = false;
 
     //reset all vars
     num1 = 0;
@@ -135,6 +141,8 @@ function clear(){
 
 function equals(){    
     if(operator === '') return;
+
+    pressedEqual = true;
 
     // store num2
     num2 = Number(calcDisplay.textContent);
@@ -157,6 +165,7 @@ function equals(){
     pressedDot = false;
     pressedOperator = false;
     pressedNum2 = false;
+    
 }
 
 // op will represent the symbol of the operation
