@@ -6,7 +6,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.header {
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #184e77;
+    color: #b5e48c;
+    text-align: center;
 }
 
 button{
@@ -83,4 +97,12 @@ button{
 
 #zero{
     flex: 2 1 auto;
+}
+
+.footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #184e77;
+    color: #b5e48c;
 }

@@ -31,7 +31,6 @@ How do we know if the user has pressed their second number?
 
 
 tasks
-3. Design the calculator with a theme
-
+1. footer
 
 
