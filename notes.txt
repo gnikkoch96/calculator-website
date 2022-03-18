@@ -33,10 +33,7 @@ How do we know if the user has pressed their second number?
 tasks
 1. fix overflowing number   
     a. I want to make it so that it expands the display box
-8. (bug) After pressing =, instead of replacing the number on the next input it appends to it 
-    a. once we press equal, pressedOperator = false and the display text is not '0'
-    b. create a new flag
-    
+
 
 
 

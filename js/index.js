@@ -9,6 +9,10 @@ let buttons = document.querySelectorAll('button');
 addButtonEventListeners(buttons);
 addKeyBoardPressListeners();
 
+// set up footer content
+let footer = document.querySelector('.footer');
+footer.textContent = `Copyright (c) Nikko ${(new Date()).getFullYear()}`;
+
 // flags
 let pressedDot = false;
 let pressedEqual = false;
